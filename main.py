@@ -40,30 +40,44 @@ class OnlineSalesRegisterCollector:
         if len(self.__name_items) > 10:
             total_sum *=0.9
         return total_sum
+    
+    def twenty_percent_tax_calculation(self):
+        twenty_percent_tax=[]
+        total=[]
+        for item in self.__name_items:
+            if self.__tax_rate[item] == 20:
+                twenty_percent_tax.append(item)
+        print(twenty_percent_tax)
+        for item in twenty_percent_tax:
+            price = self.__item_price[item]
+            total.append(price)
+        sum_20 = sum(total)
+        if len(self.__name_items) > 10:
+            sum_20 *= 0.9
+        twenty_percent_tax = sum_20 * 0.2
+        return twenty_percent_tax
+    
+
 
 
 # kassa_1 = OnlineSalesRegisterCollector()
 
-# # print(kassa_1.name_items)
-# # print(kassa_1.number_items)
+# print(kassa_1.name_items)
+# print(kassa_1.number_items)
+# kassa_1.add_item_to_cheque("молоко")
 # kassa_1.add_item_to_cheque("чипсы")
 # kassa_1.add_item_to_cheque("чипсы")
 # kassa_1.add_item_to_cheque("чипсы")
 # kassa_1.add_item_to_cheque("чипсы")
 # kassa_1.add_item_to_cheque("чипсы")
 # kassa_1.add_item_to_cheque("чипсы")
-# kassa_1.add_item_to_cheque("чипсы")
-# kassa_1.add_item_to_cheque("чипсы")
-# kassa_1.add_item_to_cheque("чипсы")
-# # print(kassa_1.name_items)
-# # print(kassa_1.number_items)
 # kassa_1.add_item_to_cheque("кола")
-# # print(kassa_1.name_items)
-# # print(kassa_1.number_items)
-# # input()
-# # kassa_1.delete_item_from_check("чипсы")
-# # print(kassa_1.name_items)
-# # print(kassa_1.number_items)
+# kassa_1.add_item_to_cheque("печенье")
+# kassa_1.add_item_to_cheque("кефир")
+# kassa_1.add_item_to_cheque("кола")
+# input()
+# print(kassa_1.name_items)
+# print(kassa_1.number_items)
 
-# print(kassa_1.__dict__)
 # print(kassa_1.check_amount())
+# print(kassa_1.twenty_percent_tax_calculation())
